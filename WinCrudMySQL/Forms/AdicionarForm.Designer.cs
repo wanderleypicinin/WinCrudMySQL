@@ -31,11 +31,11 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            btnAdicionar = new Button();
             txtNome = new TextBox();
             txtEmail = new TextBox();
             txtTelefone = new TextBox();
             label4 = new Label();
+            btnSalvar = new Button();
             SuspendLayout();
             // 
             // label1
@@ -63,16 +63,6 @@
             label3.Size = new Size(52, 15);
             label3.TabIndex = 2;
             label3.Text = "Telefone";
-            // 
-            // btnAdicionar
-            // 
-            btnAdicionar.Location = new Point(189, 214);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(75, 23);
-            btnAdicionar.TabIndex = 3;
-            btnAdicionar.Text = "Adicionar";
-            btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += button1_Click;
             // 
             // txtNome
             // 
@@ -105,16 +95,26 @@
             label4.TabIndex = 7;
             label4.Text = "Nome";
             // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(142, 218);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(101, 23);
+            btnSalvar.TabIndex = 8;
+            btnSalvar.Text = "Cadastrar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
             // AdicionarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(503, 450);
+            Controls.Add(btnSalvar);
             Controls.Add(label4);
             Controls.Add(txtTelefone);
             Controls.Add(txtEmail);
             Controls.Add(txtNome);
-            Controls.Add(btnAdicionar);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -124,15 +124,22 @@
             PerformLayout();
         }
 
+        // Add the missing event handler method for the button click event.  
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Add your logic here for what should happen when the button is clicked.  
+            MessageBox.Show("Button clicked!");
+        }
+
         #endregion
 
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button btnAdicionar;
         private TextBox txtNome;
         private TextBox txtEmail;
         private TextBox txtTelefone;
         private Label label4;
+        private Button btnSalvar;
     }
 }
